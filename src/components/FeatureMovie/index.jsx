@@ -21,18 +21,18 @@ const FeatureMovie = () => {
       setActiveMovieID(popularMovies[0].id);
     })
   }, [])
-  // Auto change active movie ID every 5 seconds
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setActiveMovieID((prevId) => {
-        const currentIndex = movies.findIndex((movie) => movie.id === prevId);
-        const nextIndex = (currentIndex + 1) % movies.length;
-        return movies[nextIndex].id;
-      });
-    }, 5000);
+  // // Auto change active movie ID every 5 seconds
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setActiveMovieID((prevId) => {
+  //       const currentIndex = movies.findIndex((movie) => movie.id === prevId);
+  //       const nextIndex = (currentIndex + 1) % movies.length;
+  //       return movies[nextIndex].id;
+  //     });
+  //   }, 5000);
 
-    return () => clearInterval(intervalId); // Cleanup on unmount
-  }, [movies]);
+  //   return () => clearInterval(intervalId); // Cleanup on unmount
+  // }, [movies]);
 
 
   return (
