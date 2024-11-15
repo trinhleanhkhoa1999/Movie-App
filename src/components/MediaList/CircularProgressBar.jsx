@@ -1,14 +1,15 @@
 const CircularProgressBar = ({
-  percent = 80,
+  percent = 0,
   size = 3,
   strokeWidth = 0.25,
+  strokeColor = "green"
 }) => {
   const radius = size / 2 - strokeWidth;
   return (
     <div>
       <svg width={`${size}vw`} height={`${size}vw`}>
         <circle
-          r="20px"
+          r={`${radius}vw`}
           cx={`${size / 2}vw`}
           cy={`${size / 2}vw`}
           stroke="white"
@@ -19,7 +20,7 @@ const CircularProgressBar = ({
           cx={`${size / 2}vw`}
           cy={`${size / 2}vw`}
           fill="none"
-          stroke="green"
+          stroke={strokeColor}
           strokeWidth={`${strokeWidth}vw`}
           strokeDasharray={`${2 * Math.PI * radius}vw`} //chu vi: 2*PI*R => 2 * 3.14 * 20 = 125.6
           strokeDashoffset={`${2 * Math.PI * radius - (percent / 100) * 2 * Math.PI * radius}vw`}
