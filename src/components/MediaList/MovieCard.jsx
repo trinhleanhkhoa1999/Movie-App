@@ -5,7 +5,7 @@ const MovieCard = ({ title, poster_path, release_date, point, media_type }) => {
     <div className="rounded-lg border border-slate-800 relative">
       {
         media_type === "tv" &&
-        <p className="absolute right-1 top-1 bg-black rounded p-1 text-[1.2vw] text-white">TV show</p>
+        <p className="absolute right-1 top-1 bg-black rounded p-1 text-[1vw] text-white">TV show</p>
       }
       <img
         className="rounded-lg w-full"
