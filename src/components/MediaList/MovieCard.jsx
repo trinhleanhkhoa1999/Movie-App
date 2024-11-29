@@ -1,4 +1,4 @@
-import CircularProgressBar from "./CircularProgressBar";
+import CircularProgressBar from "../CircularProgressBar";
 
 const MovieCard = ({ title, poster_path, release_date, point, media_type }) => {
   return (

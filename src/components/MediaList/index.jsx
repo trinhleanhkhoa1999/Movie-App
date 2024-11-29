@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 
-
-
-
 const MediaList = ({ title, tabs }) => {
   const [mediaList, setMediaList] = useState([]);
   const [activeTabId, setActiveTabId] = useState(tabs[0].id);
@@ -44,6 +41,7 @@ const MediaList = ({ title, tabs }) => {
       </div>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-6 lg:gap-6">
         {mediaList.map((media) => {
+          console.log(">>> media.id: ", media.id);
           return (
             <MovieCard
               key={media.id}
