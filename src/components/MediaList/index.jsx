@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import MovieCard from "./MovieCard";
+import MovieCard from "@components/MovieCard";
 
 const MediaList = ({ title, tabs }) => {
   const [mediaList, setMediaList] = useState([]);
@@ -41,10 +41,10 @@ const MediaList = ({ title, tabs }) => {
       </div>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-6 lg:gap-6">
         {mediaList.map((media) => {
-          console.log(">>> media.id: ", media.id);
           return (
             <MovieCard
               key={media.id}
+              id={media.id}
               title={media.title || media.original_name}
               poster_path={media.poster_path}
               release_date={media.release_date || media.first_air_date}
