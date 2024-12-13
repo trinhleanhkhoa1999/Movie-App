@@ -21,6 +21,8 @@ const MovieInformation = ({ movieInfo = {} }) => {
                 key={countryCode}
                 src={`https://flagcdn.com/16x12/${countryCode.toLowerCase()}.png`}
                 className="mt-1 w-[1.3vw]"
+                width={16}
+                height={12}
               />
             )
           })}
