@@ -2,6 +2,7 @@ import { groupBy } from "lodash";
 import CircularProgressBar from "../CircularProgressBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import ImageComponent from "@components/ImageComponent";
 
 const Banner = ({ mediaInfo }) => {
   const certification = (
@@ -16,14 +17,18 @@ const Banner = ({ mediaInfo }) => {
   const groupedCrews = groupBy(crews, "job");
   return (
     <div className="relative overflow-hidden text-white shadow-sm shadow-slate-800">
-      <img
+      <ImageComponent
         className="absolute inset-0 aspect-video brightness-[0.2]"
         src={`https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/${mediaInfo.backdrop_path}`}
+        width={1920}
+        height={800}
       />
       <div className="relative mx-auto flex max-w-screen-xl gap-6 px-6 py-10 lg:gap-8">
         <div className="flex-1">
-          <img
+          <ImageComponent
             src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${mediaInfo.poster_path}}`}
+            width={300}
+            height={450}
           />
         </div>
         <div className="flex-[2] text-[1.2vw]">
@@ -67,6 +72,6 @@ const Banner = ({ mediaInfo }) => {
         </div>
       </div>
     </div>
-  )
-}
-export default Banner
+  );
+};
+export default Banner;
